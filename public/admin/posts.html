@@ -117,8 +117,8 @@
       <td class="text-center">{{$value.updateAt}}</td>
       <td class="text-center">{{$value.state == 0 ? '草稿':'已发布'}}</td>
       <td class="text-center">
-        <a href="javascript:;" class="btn btn-default btn-xs" data-id="{{$value._id}}">编辑</a>
-        <a href="javascript:;" class="btn btn-danger btn-xs">删除</a>
+        <a href="/admin/post-add.html?id={{$value._id}}&categoryTitle={{$value.category.title}}" class="btn btn-default btn-xs" data-id="{{$value._id}}">编辑</a>
+        <a href="javascript:;" class="btn btn-danger btn-xs" data-delete="{{$value._id}}">删除</a>
       </td>
     </tr>
 
@@ -129,6 +129,7 @@
   </script>
 
   <script type ="text/html" id ="classify">
+    <option value="">所有分类</option>
 
   {{each response}}
   <option value="{{$value._id}}">{{$value.title}}</option>

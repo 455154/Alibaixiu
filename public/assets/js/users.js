@@ -21,7 +21,7 @@
                 }))
             },
             error:function(err){
-                console.log(err);   
+                console.log(err,'列表刷新错误');   
             }
         })
     }
@@ -42,7 +42,7 @@
                 $('#hiddenInput').val(resp[0].avatar)
             },
             error: (err) => {
-                alert('上传头像失败')
+                console.log(err,'上传头像失败')
             }
         })
     })
@@ -57,9 +57,10 @@
             data,
             success: () => {
                 local()
+                $('#operate input').val('')
             },
             error: () => {
-                alert('添加失败');
+                console.log('添加失败',err);
             }
         })
     })
@@ -86,6 +87,10 @@
             data,
             success: function (response) {
                 local()
+            },
+            error:function(err){
+                console.log(err,'修改提交错误');
+                
             }
         })
     })

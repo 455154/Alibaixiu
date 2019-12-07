@@ -8,6 +8,8 @@ const path = require('path');
 var session = require('express-session');
 // 处理文件上传
 const formidableMiddleware = require('express-formidable');
+// // 模板拼接
+// const artTemplate = require('express-art-template')
 // web服务器
 const app = express();
 // 开放静态资源
