@@ -100,9 +100,9 @@
       <td>{{$value.content}}</td>
       <td>{{$value.post.title}}</td>
       <td>{{$value.createAt}}</td>
-      <td>{{$value.state == 0 ? '未批准':'批准'}}</td>
+      <td>{{$value.state == 0 ? '未批准':'已批准'}}</td>
       <td class="text-center">
-        <a href="javascript:;" class="btn btn-info btn-xs" data-success="{{$value._id}}">批准</a>
+        <a href="javascript:;" class="btn btn-info btn-xs" data-success="{{$value._id}}"  data-status="state">{{$value.state == 0 ? '批准':'驳回'}}</a>
         <a href="javascript:;" class="btn btn-danger btn-xs" data-delete="{{$value._id}}">删除</a>
       </td>
     </tr>

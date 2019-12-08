@@ -86,7 +86,7 @@
             success: function (resp) {
                 $('#thumbnail').val(resp[0].feature)
                 console.log(resp, 1);
-                console.log($('#feature').val(), 2, $('#feature').html());
+                ($('#feature').val(), 2, $('#feature').html());
             },
             error: function (err) {
                 console.log(err);

@@ -16,7 +16,6 @@
     //表单提交
     $('#form').on('submit', function (e) {
         let data = serializeObj(this)
-        console.log(data);
         // e.preventDefault()
         $.ajax({
             type: 'post',
@@ -56,7 +55,6 @@
     //批量删除
     $('#disabled').on('click', function () {
         let lists = $('#list').find('input:checked').toArray()
-        console.log(lists);
         let id  = lists.reduce((acc, cur, index, arr) => {
             if (arr.length == 1) {
                 return $(cur).data('id')
@@ -94,7 +92,6 @@
             url:'/categories/'+$(this).data('id'),
             type:'GET',
             success:function(resp){
-                console.log(resp);
               $('#modifyBox').html(template('modifyTpl',resp))  
             }
         })
@@ -108,7 +105,6 @@
             type:'put',
             data,
             success:function(resp){
-                console.log(resp);
               $('#modifyBox').html(template('modifyTpl',resp)) 
             local() 
             }

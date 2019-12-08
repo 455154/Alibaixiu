@@ -22,6 +22,7 @@
     }
     lists(undefined, function () {
         $('#page [page]').eq(0).parent().addClass('active')
+        page = 1
     });
 
     //页码点击事件 
@@ -53,9 +54,8 @@
     $('#page').on('click', '[data-id=pre]', function (e) {
         alert(1);
         //获得当前页码
-        let fg=$('#page .active').children().attr('page') - 0
-        if( !isNaN(fg)) page=fg
-        console.log(page, '==', size);
+        let fg = $('#page .active').children().attr('page') - 0
+        if (!isNaN(fg)) page = fg
         //上一页
         page--
         if (page == 0) {
@@ -64,8 +64,6 @@
         lists(
             page,
             function () {
-                console.log('page', page);
-                console.log('size', size);
                 //对应 page 变样式
                 $('#page [page]').eq(page - 1).parent().addClass('active')
             })
@@ -93,4 +91,29 @@
             }
         })
     })
+    //审核事件 
+    $('#list').on('click', '[data-status]', function (e) {
+        let id = $(this).attr('data-success')
+
+        let state;
+        $(this).html() == '批准' ? state = 1 : state = 0
+        $(this).html() == '批准' ? $(this).html('驳回') : $(this).html('批准')
+        $.ajax({
+                url: '/comments/' + id,
+                type: 'put',
+                data: {
+                    state,
+                },
+                success: function (resp) {
+                    lists(page, function () {
+                        $('#page [page]').eq(page-1).parent().addClass('active')
+
+                    });
+
+                }
+
+        })
+    
+
+})
 }())

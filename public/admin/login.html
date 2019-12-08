@@ -41,7 +41,7 @@
           email,password
         },
         success:(response)=>{
-          location.href='/admin/index.html'
+          location.href='/admin/index.html?id='+response._id
         },
         error:()=>{
           alert('用户名/密码错误')

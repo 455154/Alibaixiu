@@ -28,13 +28,13 @@
       <!-- <div class="alert alert-danger">
         <strong>错误！</strong>发生XXX错误
       </div> -->
-      <form class="form-horizontal">
+      <form class="form-horizontal" id="form">
         <div class="form-group">
           <label class="col-sm-3 control-label">头像</label>
           <div class="col-sm-6">
             <label class="form-image">
               <input id="avatar" type="file">
-              <img src="../assets/img/default.png">
+              <img src="../assets/img/default.png" id="imgAvatar">
               <i class="mask fa fa-upload"></i>
             </label>
           </div>
@@ -49,13 +49,13 @@
         <div class="form-group">
           <label for="nickname" class="col-sm-3 control-label">昵称</label>
           <div class="col-sm-6">
-            <input id="nickname" class="form-control" name="nickname" type="type" value="张无忌" placeholder="昵称">
+            <input id="nickName" class="form-control" name="nickName" type="type" value="张无忌" placeholder="昵称">
             <p class="help-block">限制在 2-16 个字符</p>
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-offset-3 col-sm-6">
-            <button type="submit" class="btn btn-primary">更新</button>
+            <button type="submit" class="btn btn-primary" id="btn">更新</button>
             <a class="btn btn-link" href="password-reset.html">修改密码</a>
           </div>
         </div>
@@ -103,5 +103,7 @@
   <script src="../assets/vendors/jquery/jquery.js"></script>
   <script src="../assets/vendors/bootstrap/js/bootstrap.js"></script>
   <script>NProgress.done()</script>
+  <script src="../assets/js/common.js"></script>
+  <script src="../assets/js/profile.js"></script>
 </body>
 </html>

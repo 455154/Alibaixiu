@@ -1,4 +1,6 @@
 (async function(){
+
+    
 let item={}
 await $.ajax({
     url:'/posts/count',
